@@ -1,4 +1,6 @@
 import 'dart:math';
+import 'package:ai_resume_scanner/constant/my_colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ai_resume_scanner/utils/routes/routes_name.dart';
 
@@ -13,6 +15,7 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
 
   late final AnimationController _controller;
+  FirebaseAuth auth=FirebaseAuth.instance;
 
   @override
   void initState() {
@@ -24,9 +27,13 @@ class _SplashScreenState extends State<SplashScreen>
     )..forward();
 
     Future.delayed(const Duration(seconds: 3), () {
-      if (!mounted) return;
-      Navigator.pushReplacementNamed(context, RoutesName.login);
+      if(auth.currentUser!=null){
+        Navigator.pushReplacementNamed(context, RoutesName.dashboard);
+      }else{
+        Navigator.pushReplacementNamed(context, RoutesName.login);
+      }
     });
+
   }
 
   @override
@@ -52,16 +59,16 @@ class _SplashScreenState extends State<SplashScreen>
                 );
               },
               child: Image.asset(
-                'assets/Ai.png',
-                height: 120,
-                width: 120,
+                'assets/app.png',
+                height: 180,
+                width: 180,
               ),
             ),
             const SizedBox(height: 16),
             const Text(
               'AI',
               style: TextStyle(
-                color: Color(0xff00fefb),
+                color: myColor,
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
@@ -69,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen>
             const Text(
               'Resume Scanner',
               style: TextStyle(
-                color: Color(0xff00fefb),
+                color: myColor,
                 fontSize: 30,
               ),
             ),

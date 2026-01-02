@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "888847569168",
+    "project_id": "ai-resume-scanner-eb079",
+    "storage_bucket": "ai-resume-scanner-eb079.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888847569168:android:0e3586da2fb19abfff1595",
+        "android_client_info": {
+          "package_name": "com.bilalblouchg786.ai_resume_scanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQeGYS8h9d1VZ_YrKJffFPMgoK1yKTEyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
